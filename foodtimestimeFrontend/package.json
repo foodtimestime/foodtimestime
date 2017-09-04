@@ -1,0 +1,22 @@
+{
+  "name": "foodtimestimefrontend",
+  "version": "1.0.0",
+  "description": "React-based frontend for foodtimestimeApi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/foodtimestime/foodtimestime.git"
+  },
+  "author": "Aaron Cooper",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/foodtimestime/foodtimestime/issues"
+  },
+  "homepage": "https://github.com/foodtimestime/foodtimestime#readme",
+  "dependencies": {
+    "react": "^15.6.1"
+  }
+}
