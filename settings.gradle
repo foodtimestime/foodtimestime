@@ -15,6 +15,7 @@ include 'api'
 include 'services:webservice'
 */
 include 'foodtimestimeApi'
+include 'foodtimestimeFrontend'
 
 rootProject.name = 'foodtimestime'
 
