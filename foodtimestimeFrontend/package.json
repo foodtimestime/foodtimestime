@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack-dev-server",
+    "stop": "for /f \"tokens=5\" %a in ('netstat -aon ^| findstr 8080 ^| findstr LISTENING') do taskkill /pid %a /f",
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "npm run build && npm run git-commit && npm run git-push"
   },
@@ -21,7 +22,8 @@
   "homepage": "https://github.com/foodtimestime/foodtimestime#readme",
   "dependencies": {
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -32,5 +34,3 @@
     "webpack-dev-server": "^2.7.1"
   }
 }
-
-

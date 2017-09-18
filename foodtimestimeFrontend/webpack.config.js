@@ -6,7 +6,8 @@ var HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
 });
 
 module.exports = {
-    entry: __dirname + '/app/index.js',
+    entry: ['whatwg-fetch', __dirname + '/app/index.js'],
+    // entry: __dirname + '/app/index.js',
     module: {
         loaders: [
             {
@@ -18,7 +19,7 @@ module.exports = {
     },
     output: {
         filename: 'transformed.js',
-        path: __dirname + '/build'
+        path: __dirname + '/src/main/resources/react/app'
     },
     plugins: [HTMLWebpackPluginConfig]
 };

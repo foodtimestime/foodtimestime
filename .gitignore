@@ -5,3 +5,12 @@
 
 # Gradle
 .gradle/
+
+# Build
+build/
+foodtimestimeApi/build/
+foodtimestimeFrontend/build/
+foodtimestimeApi/out/
+foodtimestimeFrontend/out/
+foodtimestimeApi/src/main/resources/react/
+foodtimestimeFrontend/src/main/resources/react/
