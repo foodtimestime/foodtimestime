@@ -12,7 +12,7 @@ public class DbTest {
 
     public static void main(String[] args) {
         try {
-            connect();
+            conn = connect();
             String prepQuery = "SELECT mName FROM meals WHERE mealid = ?";
             PreparedStatement preparedStatement = conn.prepareStatement(prepQuery);
             preparedStatement.setInt(1, 1);
@@ -26,15 +26,17 @@ public class DbTest {
         System.out.println(mealName);
     }
 
-    private static void connect() {
+    public static Connection connect() {
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost/foodtimestime?" +
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/foodtimestime?" +
                     "user=root&password=trombone7&useSSL=false");
-            conn.setSchema("foodtimestime");
+            connection.setSchema("foodtimestime");
+            return connection;
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
             System.out.println("VendorError: " + ex.getErrorCode());
         }
+        return null;
     }
 }
