@@ -1,0 +1,37 @@
+{
+  "name": "foodtimestimefrontend",
+  "version": "1.0.0",
+  "description": "React-based frontend for foodtimestimeApi",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server",
+    "stop": "for /f \"tokens=5\" %a in ('netstat -aon ^| findstr 8080 ^| findstr LISTENING') do taskkill /pid %a /f",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "npm run build && npm run git-commit && npm run git-push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/foodtimestime/foodtimestime.git"
+  },
+  "author": "Aaron Cooper",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/foodtimestime/foodtimestime/issues"
+  },
+  "homepage": "https://github.com/foodtimestime/foodtimestime#readme",
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-react": "^6.24.1",
+    "html-webpack-plugin": "^2.30.1",
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1"
+  }
+}
+
+
