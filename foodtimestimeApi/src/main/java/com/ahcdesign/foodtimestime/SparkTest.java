@@ -1,5 +1,7 @@
 package com.ahcdesign.foodtimestime;
 
+import com.ahcdesign.foodtimestime.utils.DbUtilities;
+
 import static spark.Spark.*;
 
 import java.sql.Connection;
@@ -29,14 +31,14 @@ public class SparkTest {
         String mealName;
 
         try {
-            conn = DbTest.connect();
+            conn = DbUtilities.connect();
             String prepQuery = "SELECT mName FROM meals ORDER BY RAND() LIMIT 1";
             PreparedStatement preparedStatement = conn.prepareStatement(prepQuery);
             ResultSet result = preparedStatement.executeQuery();
             result.next();
             mealName = result.getString(1);
         } catch (SQLException ex) {
-            mealName = "Exception:" + ex;
+            mealName = "Exception:" + ex.toString();
         }
 
         return mealName;

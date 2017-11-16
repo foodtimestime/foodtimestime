@@ -26,6 +26,9 @@ dependencies {
     // JDBC driver for MySQL querying and storage
     implementation 'mysql:mysql-connector-java:5.1.44'
 
+    // For parsing JSON
+    implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
 
