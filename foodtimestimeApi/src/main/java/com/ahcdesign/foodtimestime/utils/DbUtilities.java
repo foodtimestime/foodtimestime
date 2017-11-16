@@ -15,6 +15,8 @@ public class DbUtilities {
 
     /**
      * Connects to the database specified in configure.json
+     */
+    public static Connection connect() {
         try {
             JSONParser jsonParser = new JSONParser();
             JSONObject rootJson = (JSONObject) jsonParser.parse(ConfigUtilities.getConfig());
