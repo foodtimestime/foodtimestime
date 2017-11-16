@@ -10,6 +10,7 @@ import java.sql.SQLException;
 public class SparkTest {
     public static void main(String[] args) {
         port(5678);
+
         post("/api/v1/random", (request, response) -> {
             return response;
         });
@@ -31,7 +32,6 @@ public class SparkTest {
             conn = DbTest.connect();
             String prepQuery = "SELECT mName FROM meals ORDER BY RAND() LIMIT 1";
             PreparedStatement preparedStatement = conn.prepareStatement(prepQuery);
-//            preparedStatement.setInt(1, 1);
             ResultSet result = preparedStatement.executeQuery();
             result.next();
             mealName = result.getString(1);
