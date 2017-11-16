@@ -28,15 +28,17 @@ public class SparkTest {
 
     private static String fetchRandomMealName() {
         Connection conn;
-        String mealName;
+        String mealName = null;
 
         try {
             conn = DbUtilities.connect();
-            String prepQuery = "SELECT mName FROM meals ORDER BY RAND() LIMIT 1";
-            PreparedStatement preparedStatement = conn.prepareStatement(prepQuery);
-            ResultSet result = preparedStatement.executeQuery();
-            result.next();
-            mealName = result.getString(1);
+            if (conn != null) {
+                String prepQuery = "SELECT mName FROM meals ORDER BY RAND() LIMIT 1";
+                PreparedStatement preparedStatement = conn.prepareStatement(prepQuery);
+                ResultSet result = preparedStatement.executeQuery();
+                result.next();
+                mealName = result.getString(1);
+            }
         } catch (SQLException ex) {
             mealName = "Exception:" + ex.toString();
         }
