@@ -37,3 +37,19 @@ dependencies {
     implementation 'ch.qos.logback:logback-classic:1.+'
 }
 
+task createConfigFile(type:Copy) {
+    // Create a File object representing the folder 'A/B'
+    def CONFIG_DIR = new String('src/main/resources/configure/')
+    def CLEAN_NAME = new String('.config_clean')
+    def CONFIG_NAME = new String('config.json')
+    def CONFIG_FILE = new File(CONFIG_DIR + CONFIG_NAME)
+
+    // If it doesn't exist, copy the clean config to the same directory
+    if (!CONFIG_FILE.exists()) {
+        from(CONFIG_DIR + CLEAN_NAME)
+        into(CONFIG_DIR)
+        rename (CLEAN_NAME, CONFIG_NAME)
+    }
+}
+
+build.dependsOn(createConfigFile)

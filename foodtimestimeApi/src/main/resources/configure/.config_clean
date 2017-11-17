@@ -1,0 +1,11 @@
+{
+  "config": {
+    "db": {
+      "hostName": "localhost",
+      "port": 3306,
+      "databaseName": "foodtimestime",
+      "userName": "root",
+      "password": "password"
+    }
+  }
+}
